@@ -48,149 +48,92 @@
 
     </androidx.appcompat.widget.Toolbar>
 
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar_day">
+        app:layout_constraintTop_toTopOf="parent"
+        >
 
-
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_day"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/firstdaycardview"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/daycardview"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_margin="16dp"
+            android:clickable="true"
+
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardBackgroundColor="@color/pale_yellow"
+
+            app:cardCornerRadius="20dp"
+            app:cardElevation="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+
                 android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:layout_margin="16dp"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="8dp"
-
-                android:foreground="?android:attr/selectableItemBackground"
-                android:focusable="true"
-                android:clickable="true"
-
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:cardBackgroundColor="@color/pale_yellow"
-                >
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
 
                 <LinearLayout
-                    android:id="@+id/todaydate1"
-                    android:layout_width="match_parent"
+                    android:id="@+id/daycardview_todaydate"
+                    android:layout_width="50dp"
                     android:layout_height="match_parent"
-                    android:layout_margin="10dp"
-                    android:orientation="horizontal">
-                    <LinearLayout
-                        android:layout_width="50dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginEnd="10dp"
-                        >
+                    android:layout_marginEnd="10dp">
+
                     <TextView
+                        android:id="@+id/daycardview_todaydatet"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="5/1\nMon"
+                        android:layout_gravity="center"
                         android:layout_marginLeft="10dp"
 
-                        android:layout_gravity="center"
+                        android:text="5/1\nMon"
                         android:textAlignment="center"
                         android:textSize="16sp" />
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@color/white">
-                    <TextView
-                        android:layout_marginHorizontal="10dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-
-                        android:text="20:00 별밤 홍보팀 회의\n22:00 펜슬테스트#1"
-                        android:layout_gravity="center"/>
-                    </LinearLayout>
                 </LinearLayout>
-
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/seconddaycardview"
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-
-                android:layout_marginHorizontal="16dp"
-
-                android:clickable="true"
-
-                android:focusable="true"
-                android:foreground="?android:attr/selectableItemBackground"
-                app:cardBackgroundColor="@color/pale_yellow"
-
-                app:cardCornerRadius="20dp"
-
-                app:cardElevation="8dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/firstdaycardview"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.6">
 
                 <LinearLayout
-                    android:id="@+id/todaydate2"
+                    android:id="@+id/daycardview_text"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_margin="10dp"
-                    android:orientation="horizontal">
+                    android:background="@color/white">
 
-                    <LinearLayout
-                        android:layout_width="50dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginEnd="10dp">
+                    <TextView
+                        android:id="@+id/daycardview_textt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginLeft="10dp"
-
-                            android:text="5/2\nTue"
-                            android:textAlignment="center"
-                            android:textSize="16sp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@color/white">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-
-                            android:layout_marginHorizontal="10dp"
-                            android:text="09:00 운영체제 쪽지시험\n18:30 학생회 회의\n24:00 별밤 홍보팀 도안 완성" />
-                    </LinearLayout>
+                        android:layout_marginHorizontal="10dp"
+                        android:text="20:00 별밤 홍보팀 회의\n22:00 펜슬테스트#1" />
                 </LinearLayout>
+            </LinearLayout>
 
 
-            </androidx.cardview.widget.CardView>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-
-
-    </androidx.core.widget.NestedScrollView>
-
-
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
